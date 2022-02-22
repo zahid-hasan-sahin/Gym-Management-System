@@ -536,6 +536,7 @@ public class addNewMember extends javax.swing.JFrame {
                     member.setTime(gmail, time);
                     member.setAmount(gmail, amount);
 
+                    member.addToDb();
                     JOptionPane.showMessageDialog(null, "Member Added", "Added", JOptionPane.INFORMATION_MESSAGE);
                 }
             } catch (Exception e) {

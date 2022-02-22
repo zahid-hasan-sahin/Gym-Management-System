@@ -9,13 +9,10 @@ import java.util.Scanner;
 
 public class MemberInfo {
 
-    void addMember(String gmail) throws IOException {
-        File f = new File("member_Details//" + gmail);
-        f.mkdir();
+    Member mem = new Member();
 
-        FileWriter fw = new FileWriter("member_Details//gmails.txt", true);
-        fw.write(gmail + "\r\n");
-        fw.close();
+    void addMember(String gmail) throws IOException {
+        mem.setGmail(gmail);
     }
 
     void deleteMember(String gmail) throws FileNotFoundException, IOException {
@@ -45,10 +42,7 @@ public class MemberInfo {
     }
 
     void setName(String gmail, String name) throws IOException {
-
-        FileWriter fw = new FileWriter("member_Details//" + gmail + "//name.txt");
-        fw.write(name);
-        fw.close();
+        mem.setName(name);
     }
 
     String getName(String gmail) throws IOException {
@@ -59,9 +53,7 @@ public class MemberInfo {
     }
 
     void setPhone(String gmail, String phone) throws IOException {
-        FileWriter fw = new FileWriter("member_Details//" + gmail + "//phone.txt");
-        fw.write(phone);
-        fw.close();
+        mem.setPhone(phone);
     }
 
     String getPhone(String gmail) throws IOException {
@@ -72,9 +64,7 @@ public class MemberInfo {
     }
 
     void setAge(String gmail, String age) throws IOException {
-        FileWriter fw = new FileWriter("member_Details//" + gmail + "//age.txt");
-        fw.write(age);
-        fw.close();
+        mem.setAge(age);
     }
 
     String getAge(String gmail) throws IOException {
@@ -85,9 +75,7 @@ public class MemberInfo {
     }
 
     void setGender(String gmail, String gender) throws IOException {
-        FileWriter fw = new FileWriter("member_Details//" + gmail + "//gender.txt");
-        fw.write(gender);
-        fw.close();
+        mem.setGender(gender);
     }
 
     String getGender(String gmail) throws IOException {
@@ -98,9 +86,7 @@ public class MemberInfo {
     }
 
     void setTime(String gmail, String time) throws IOException {
-        FileWriter fw = new FileWriter("member_Details//" + gmail + "//time.txt");
-        fw.write(time);
-        fw.close();
+        mem.setTime(time);
     }
 
     String getTime(String gmail) throws IOException {
@@ -111,9 +97,7 @@ public class MemberInfo {
     }
 
     void setAmount(String gmail, String amount) throws IOException {
-        FileWriter fw = new FileWriter("member_Details//" + gmail + "//amount.txt");
-        fw.write(amount);
-        fw.close();
+        mem.setAmount(amount);
     }
 
     String getAmount(String gmail) throws IOException {
@@ -136,7 +120,7 @@ public class MemberInfo {
             Scanner scan = new Scanner(fw);
             ArrayList<String> pay = new ArrayList<String>();
             while (scan.hasNext()) {
-                pay.add(scan.next() +" "+ scan.next());
+                pay.add(scan.next() + " " + scan.next());
             }
 
             return pay;
@@ -144,7 +128,7 @@ public class MemberInfo {
             FileWriter fw = new FileWriter("member_Details//" + gmail + "//payment.txt");
             fw.close();
             return new ArrayList<String>();
-        
+
         }
 
     }
@@ -159,6 +143,11 @@ public class MemberInfo {
             members.add(scan.nextLine());
         }
         return members;
+    }
+
+    void addToDb() {
+        ConnectionDb.addMember(mem);
+        System.out.println();
     }
 
 }
