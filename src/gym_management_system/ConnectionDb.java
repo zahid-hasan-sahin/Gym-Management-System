@@ -25,4 +25,21 @@ public class ConnectionDb {
             JOptionPane.showMessageDialog(null, "Error in database");
         }
     }
+
+    public static boolean isExistMember(String gmail) {
+        String url = "jdbc:mysql://localhost:3306/gym_management_system";
+        String userName = "root";
+        String password = "";
+        String q = "select * from member where gmail ='" + gmail + "'";
+        try {
+            Connection con = DriverManager.getConnection(url, userName, password);
+            Statement st = con.createStatement();
+            ResultSet res = st.executeQuery(q);
+            return res.next();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error With Database");
+
+        }
+        return false;
+    }
 }
