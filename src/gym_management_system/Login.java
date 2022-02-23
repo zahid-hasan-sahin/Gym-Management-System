@@ -5,12 +5,6 @@
  */
 package gym_management_system;
 
-/* 
-    Name:Avishek Ray
-    ID:152-034-042
-
- */
-
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.JLabel;

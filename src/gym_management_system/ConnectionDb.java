@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class ConnectionDb {
-    
+
     static void addMember(Member mem) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -23,12 +23,11 @@ public class ConnectionDb {
             st.setString(7, mem.getAmount());
             st.executeUpdate();
         } catch (Exception e) {
-            System.out.println(e);
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error in database");
         }
     }
-    
+
     public static boolean isExistMember(String gmail) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -40,13 +39,13 @@ public class ConnectionDb {
             ResultSet res = st.executeQuery(q);
             return res.next();
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return false;
     }
-    
+
     public static ArrayList<String> getGmailList() {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -56,22 +55,22 @@ public class ConnectionDb {
             Connection con = DriverManager.getConnection(url, userName, password);
             Statement st = con.createStatement();
             ResultSet res = st.executeQuery(q);
-            
+
             ArrayList<String> ar = new ArrayList<String>();
             while (res.next()) {
                 ar.add(res.getString("gmail"));
             }
-            System.out.println(ar);
+
             return ar;
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return null;
-        
+
     }
-    
+
     static String getName(String gmail) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -84,15 +83,14 @@ public class ConnectionDb {
             res.next();
             return res.getString("name");
         } catch (Exception e) {
-            
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return null;
-        
+
     }
-    
+
     static String getPhone(String gmail) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -105,14 +103,14 @@ public class ConnectionDb {
             res.next();
             return res.getString("phone");
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return null;
-        
+
     }
-    
+
     static String getAge(String gmail) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -125,14 +123,14 @@ public class ConnectionDb {
             res.next();
             return res.getString("age");
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return null;
-        
+
     }
-    
+
     static String getGender(String gmail) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -145,14 +143,14 @@ public class ConnectionDb {
             res.next();
             return res.getString("gender");
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return null;
-        
+
     }
-    
+
     static String getTime(String gmail) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -165,14 +163,14 @@ public class ConnectionDb {
             res.next();
             return res.getString("time");
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return null;
-        
+
     }
-    
+
     static String getAmount(String gmail) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -185,20 +183,20 @@ public class ConnectionDb {
             res.next();
             return res.getString("amount");
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return null;
-        
+
     }
-    
+
     public static void deleteMember(String gmail) {
-        
+
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
         String password = "";
-        
+
         String q = "delete from member where gmail='" + gmail + "'";
         String q2 = "delete from payment where gmail='" + gmail + "'";
         try {
@@ -206,15 +204,15 @@ public class ConnectionDb {
             Statement st = con.createStatement();
             st.executeUpdate(q);
             st.executeUpdate(q2);
-            
+
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
-        
+
     }
-    
+
     static void updateMember(Member mem) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -223,11 +221,11 @@ public class ConnectionDb {
                 + "phone=?,time=?,amount=? WHERE gmail =?;";
         try {
             Connection con = DriverManager.getConnection(url, userName, password);
-            
+
             PreparedStatement st = con.prepareStatement(q);
-            
+
             st.setString(1, mem.getGmail());
-            
+
             st.setString(2, mem.getName());
             st.setString(3, mem.getGender());
             st.setString(4, mem.getAge());
@@ -237,12 +235,12 @@ public class ConnectionDb {
             st.setString(8, mem.getGmail());
             st.executeUpdate();
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error in database");
         }
-        
+
     }
-    
+
     static void addPayment(String gmail, String amount, String date) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -256,12 +254,11 @@ public class ConnectionDb {
             st.setString(3, date);
             st.executeUpdate();
         } catch (Exception e) {
-            System.out.println(e);
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error in database");
         }
     }
-    
+
     static ArrayList<String> getPayment(String gmail) {
         String url = "jdbc:mysql://localhost:3306/gym_management_system";
         String userName = "root";
@@ -277,11 +274,11 @@ public class ConnectionDb {
             }
             return pay;
         } catch (Exception e) {
-            System.out.println(e);
+
             JOptionPane.showMessageDialog(null, "Error With Database");
-            
+
         }
         return null;
-        
+
     }
 }
