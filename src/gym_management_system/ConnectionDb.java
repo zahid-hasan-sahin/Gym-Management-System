@@ -192,4 +192,24 @@ public class ConnectionDb {
         return null;
 
     }
+
+    public static void deleteMember(String gmail) {
+
+        String url = "jdbc:mysql://localhost:3306/gym_management_system";
+        String userName = "root";
+        String password = "";
+
+        String q = "delete from member where gmail='" + gmail + "'";
+        try {
+            Connection con = DriverManager.getConnection(url, userName, password);
+            Statement st = con.createStatement();
+            st.executeUpdate(q);
+
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Error With Database");
+
+        }
+
+    }
 }
