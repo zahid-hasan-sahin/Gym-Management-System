@@ -151,9 +151,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\add-48.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Add Member"/>
           </Properties>
           <Events>
@@ -171,9 +168,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\view-details-48.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="List Of Members"/>
           </Properties>
@@ -193,9 +187,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\logout-48.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Logout"/>
           </Properties>
           <Events>
@@ -212,9 +203,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\price-tag-48.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Payment"/>
           </Properties>
           <Events>
@@ -229,9 +217,6 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\available-updates-48_1.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Update  Member"/>
           </Properties>
           <Events>
@@ -245,9 +230,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\delete-48.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Delete Member"/>
           </Properties>
@@ -315,9 +297,6 @@
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\view-details-48.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="List Of Members"/>
           </Properties>
@@ -403,11 +382,6 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel2">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\close .png"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel2MouseClicked"/>
       </Events>

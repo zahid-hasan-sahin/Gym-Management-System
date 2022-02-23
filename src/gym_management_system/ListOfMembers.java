@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-
 public class ListOfMembers extends javax.swing.JFrame {
 
     /**
@@ -29,14 +28,13 @@ public class ListOfMembers extends javax.swing.JFrame {
         MemberInfo mem = new MemberInfo();
         try {
             ArrayList<String> membersGmail = mem.getAllMembersGmail();
-
             for (int i = 0; i < membersGmail.size(); i++) {
 
                 String gmail = membersGmail.get(i);
                 String[] data = new String[7];
 
                 try {
-                 
+
                     data[0] = gmail;
                     data[1] = mem.getName(gmail);
                     data[2] = mem.getPhone(gmail);

@@ -37,9 +37,7 @@ public class MemberInfo {
     }
 
     String getName(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//name.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getName(gmail);
 
     }
 
@@ -48,9 +46,7 @@ public class MemberInfo {
     }
 
     String getPhone(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//phone.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getPhone(gmail);
 
     }
 
@@ -59,9 +55,7 @@ public class MemberInfo {
     }
 
     String getAge(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//age.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getAge(gmail);
 
     }
 
@@ -70,9 +64,7 @@ public class MemberInfo {
     }
 
     String getGender(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//gender.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getGender(gmail);
 
     }
 
@@ -81,9 +73,7 @@ public class MemberInfo {
     }
 
     String getTime(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//time.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getTime(gmail);
 
     }
 
@@ -92,9 +82,7 @@ public class MemberInfo {
     }
 
     String getAmount(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//amount.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getAmount(gmail);
 
     }
 
@@ -125,7 +113,7 @@ public class MemberInfo {
 
     ArrayList<String> getAllMembersGmail() throws FileNotFoundException {
 
-        ArrayList<String> members = new ArrayList<String>();
+        ArrayList<String> members = ConnectionDb.getGmailList();
 
         return members;
     }
