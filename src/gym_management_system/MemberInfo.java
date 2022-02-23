@@ -16,14 +16,7 @@ public class MemberInfo {
     }
 
     void deleteMember(String gmail) throws FileNotFoundException, IOException {
-        ArrayList<String> member = getAllMembersGmail();
-        member.remove(gmail);
-
-        FileWriter fw = new FileWriter("member_Details//gmails.txt");
-        for (int i = 0; i < member.size(); i++) {
-            fw.write(member.get(i) + "\r\n");
-        }
-        fw.close();
+        ConnectionDb.deleteMember(gmail);
     }
 
     boolean isExistMember(String gmail) throws FileNotFoundException {
@@ -87,27 +80,11 @@ public class MemberInfo {
     }
 
     void setPayment(String gmail, String amount, String date) throws IOException {
-
-        FileWriter fw = new FileWriter("member_Details//" + gmail + "//payment.txt", true);
-        fw.write(amount + " " + date + "\r\n");
-        fw.close();
+        ConnectionDb.addPayment(gmail, amount, date);
     }
 
     ArrayList<String> getPayment(String gmail) throws IOException {
-        try {
-            File fw = new File("member_Details//" + gmail + "//payment.txt");
-            Scanner scan = new Scanner(fw);
-            ArrayList<String> pay = new ArrayList<String>();
-            while (scan.hasNext()) {
-                pay.add(scan.next() + " " + scan.next());
-            }
-
-            return pay;
-        } catch (Exception E) {
-            FileWriter fw = new FileWriter("member_Details//" + gmail + "//payment.txt");
-            fw.close();
-            return new ArrayList<String>();
-        }
+        return ConnectionDb.getPayment(gmail);
 
     }
 
@@ -120,7 +97,10 @@ public class MemberInfo {
 
     void addToDb() {
         ConnectionDb.addMember(mem);
-        System.out.println();
+    }
+
+    void updateMember() {
+        ConnectionDb.updateMember(mem);
     }
 
 }
