@@ -22,7 +22,7 @@ public class UpdateMember extends javax.swing.JFrame {
         initComponents();
         editedCode();
     }
-
+    
     void editedCode() {
         jLabel1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabel8.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -30,7 +30,7 @@ public class UpdateMember extends javax.swing.JFrame {
         jLabel5.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabel6.setCursor(new Cursor(Cursor.HAND_CURSOR));
         jLabel7.setCursor(new Cursor(Cursor.HAND_CURSOR));
-
+        
     }
 
     /**
@@ -534,21 +534,23 @@ public class UpdateMember extends javax.swing.JFrame {
         }
         String time = jComboBox1.getSelectedItem().toString();
         String amount = jTextField6.getText();
-
+        
         try {
+            member.addMember(gmail);
             member.setName(gmail, name);
             member.setPhone(gmail, phone);
             member.setAge(gmail, age);
             member.setGender(gmail, gender);
             member.setTime(gmail, time);
             member.setAmount(gmail, amount);
+            member.updateMember();
         } catch (IOException ex) {
             JOptionPane.showMessageDialog(null, "Something Went Wrong", "Error", JOptionPane.INFORMATION_MESSAGE);
             setVisible(false);
             new addNewMember().setVisible(true);
         }
         JOptionPane.showMessageDialog(null, "Details Updated", "Added", JOptionPane.INFORMATION_MESSAGE);
-
+        
         setVisible(false);
         new UpdateMember().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -630,7 +632,7 @@ public class UpdateMember extends javax.swing.JFrame {
                 jTextField8.setBackground(bg);
                 jTextField6.setBackground(bg);
                 jComboBox1.setBackground(bg);
-
+                
                 jTextField2.setEditable(true);
                 jTextField7.setEditable(true);
                 jTextField8.setEditable(true);
@@ -640,7 +642,7 @@ public class UpdateMember extends javax.swing.JFrame {
                 jRadioButton2.setEnabled(true);
                 jRadioButton3.setEnabled(true);
                 jButton2.setEnabled(true);
-
+                
                 jTextField2.setToolTipText(null);
                 jTextField7.setToolTipText(null);
                 jTextField8.setToolTipText(null);
@@ -649,7 +651,7 @@ public class UpdateMember extends javax.swing.JFrame {
                 jRadioButton1.setToolTipText(null);
                 jRadioButton2.setToolTipText(null);
                 jRadioButton3.setToolTipText(null);
-
+                
                 try {
                     jTextField2.setText(mem.getName(inp));
                     jTextField7.setText(mem.getPhone(inp));
@@ -673,10 +675,10 @@ public class UpdateMember extends javax.swing.JFrame {
                     setVisible(false);
                     new UpdateMember().setVisible(true);
                 }
-
+                
             } else {
                 JOptionPane.showMessageDialog(null, "Please insert a correct Gmail", "Error", JOptionPane.INFORMATION_MESSAGE);
-
+                
             }
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Something Went Wrong", "Error", JOptionPane.INFORMATION_MESSAGE);
@@ -699,7 +701,7 @@ public class UpdateMember extends javax.swing.JFrame {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
-
+                    
                 }
             }
         } catch (ClassNotFoundException ex) {

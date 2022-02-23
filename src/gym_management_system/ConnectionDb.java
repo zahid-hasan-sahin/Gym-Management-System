@@ -212,4 +212,32 @@ public class ConnectionDb {
         }
 
     }
+
+    static void updateMember(Member mem) {
+        String url = "jdbc:mysql://localhost:3306/gym_management_system";
+        String userName = "root";
+        String password = "";
+        String q = "UPDATE member SET gmail = ? ,name =?,gender=?,age=?,"
+                + "phone=?,time=?,amount=? WHERE gmail =?;";
+        try {
+            Connection con = DriverManager.getConnection(url, userName, password);
+
+            PreparedStatement st = con.prepareStatement(q);
+
+            st.setString(1, mem.getGmail());
+
+            st.setString(2, mem.getName());
+            st.setString(3, mem.getGender());
+            st.setString(4, mem.getAge());
+            st.setString(5, mem.getPhone());
+            st.setString(6, mem.getTime());
+            st.setString(7, mem.getAmount());
+            st.setString(8, mem.getGmail());
+            st.executeUpdate();
+        } catch (Exception e) {
+            System.out.println(e);
+            JOptionPane.showMessageDialog(null, "Error in database");
+        }
+
+    }
 }
