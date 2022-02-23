@@ -28,16 +28,7 @@ public class MemberInfo {
 
     boolean isExistMember(String gmail) throws FileNotFoundException {
 
-        File fw = new File("member_Details//gmails.txt");
-        Scanner scan = new Scanner(fw);
-        while (scan.hasNext()) {
-            String in = scan.nextLine();
-            if (in.equals(gmail)) {
-
-                return true;
-            }
-        }
-        return false;
+        return ConnectionDb.isExistMember(gmail);
 
     }
 
@@ -46,9 +37,7 @@ public class MemberInfo {
     }
 
     String getName(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//name.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getName(gmail);
 
     }
 
@@ -57,9 +46,7 @@ public class MemberInfo {
     }
 
     String getPhone(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//phone.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getPhone(gmail);
 
     }
 
@@ -68,9 +55,7 @@ public class MemberInfo {
     }
 
     String getAge(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//age.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getAge(gmail);
 
     }
 
@@ -79,9 +64,7 @@ public class MemberInfo {
     }
 
     String getGender(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//gender.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getGender(gmail);
 
     }
 
@@ -90,9 +73,7 @@ public class MemberInfo {
     }
 
     String getTime(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//time.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getTime(gmail);
 
     }
 
@@ -101,9 +82,7 @@ public class MemberInfo {
     }
 
     String getAmount(String gmail) throws IOException {
-        File fw = new File("member_Details//" + gmail + "//amount.txt");
-        Scanner scan = new Scanner(fw);
-        return scan.nextLine();
+        return ConnectionDb.getAmount(gmail);
 
     }
 
@@ -128,20 +107,14 @@ public class MemberInfo {
             FileWriter fw = new FileWriter("member_Details//" + gmail + "//payment.txt");
             fw.close();
             return new ArrayList<String>();
-
         }
 
     }
 
     ArrayList<String> getAllMembersGmail() throws FileNotFoundException {
 
-        ArrayList<String> members = new ArrayList<String>();
+        ArrayList<String> members = ConnectionDb.getGmailList();
 
-        File fw = new File("member_Details//gmails.txt");
-        Scanner scan = new Scanner(fw);
-        while (scan.hasNext()) {
-            members.add(scan.nextLine());
-        }
         return members;
     }
 
