@@ -173,9 +173,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="1"/>
             </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\login.png"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Login"/>
           </Properties>
           <Events>
@@ -198,9 +195,6 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\car-key-32.png"/>
-            </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
                 <BevelBorder/>
@@ -212,9 +206,6 @@
           <Properties>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\user-5-32.png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
@@ -228,11 +219,6 @@
         <Component class="javax.swing.JLabel" name="jLabel5">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\running-man-128.png"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JPasswordField" name="jPasswordField1">
           <Properties>
@@ -255,11 +241,6 @@
       </SubComponents>
     </Container>
     <Component class="javax.swing.JLabel" name="jLabel4">
-      <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="D:\Coding_Code\Java\Gym_Management_System\src\Images\close .png"/>
-        </Property>
-      </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel4MouseClicked"/>
       </Events>
